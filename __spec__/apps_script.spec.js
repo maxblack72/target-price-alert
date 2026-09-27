@@ -1,9 +1,9 @@
 // Import the function you want to test
 
-const test1 = ['Etherium', 'ETH-EUR',  800, 4.00, 'Buy', 1000, 1.8, false];
-const test2 = ['Etherium', 'ETH-EUR',  1000, 4.00, 'Sell', 1500, 50, false];
-const test3 = ['Etherium', 'ETH-EUR',  500, 4.00, 'Buy', 1000, 50, false];
-const test4 = ['Etherium', 'ETH-EUR',  500, 4.00, 'Buy', 1000, 50, false];
+const test1 = ['Etherium', 'ETH-EUR',  800, 4.00, 'Buy Limit', 1000, 1.8, false];
+const test2 = ['Etherium', 'ETH-EUR',  1000, 4.00, 'Take Profit', 1500, 50, false];
+const test3 = ['Etherium', 'ETH-EUR',  500, 4.00, 'Buy Limit', 1000, 50, false];
+const test4 = ['Etherium', 'ETH-EUR',  500, 4.00, 'Buy Limit', 1000, 50, false];
 
 global.SpreadsheetApp = {
   getActiveSpreadsheet: () => ({

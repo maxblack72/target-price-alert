@@ -4,7 +4,7 @@ const columnName                  = 0;
 const columnTicker                = 1;
 const columnTargetPrice           = 2;
 const columnTargetPercentage      = 3;
-const columnSignal                = 4; // Sell, Buy, Stop Loss
+const columnSignal                = 4; // Take Profit, Buy Limit, Stop Loss
 const columnCurrentPrice          = 5;
 const columnCurrentDiffPercentage = 6;
 const columnSparkeline            = 7; // not used
@@ -59,13 +59,13 @@ function checkPrices() {
     if (row[columnEmailSent]) continue;
 
     // DEPENDING ON THE STRATEGY
-    if (row[columnSignal] == 'Buy' || row[columnSignal] == 'Stop Loss') {
+    if (row[columnSignal] == 'Buy Limit' || row[columnSignal] == 'Stop Loss') {
       // if price is lower than target price
       if (row[columnCurrentPrice] <= row[columnTargetPrice]) {
         this.addStrategyRowToEmail(row, i);
         continue;
       }   
-    } else if (row[columnSignal] == 'Sell') {
+    } else if (row[columnSignal] == 'Take Profit') {
       // if price is upper than target price
       if (row[columnCurrentPrice] >= row[columnTargetPrice]) {
         this.addStrategyRowToEmail(row, i);
